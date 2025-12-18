@@ -13,6 +13,7 @@ from market_ranking import load_market_prices, rank_crops_by_city
 from recommender import suggest_by_fertilizer, suggest_by_crop_with_fertilizer
 
 app = Flask(__name__)
+app.config["SESSION_PERMANENT"] = False
 app.config["SECRET_KEY"] = "change-me-in-prod"
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///app.db"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
@@ -161,9 +162,8 @@ def logout():
 # --------------------
 @app.route("/")
 def index():
-    if "user_id" in session:
-        return redirect(url_for("dashboard"))
     return redirect(url_for("login"))
+
 
 @app.route("/dashboard", methods=["GET"])
 @login_required

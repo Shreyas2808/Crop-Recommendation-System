@@ -1,98 +1,97 @@
 * {
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-
-body {
     margin: 0;
-    background: #f4f7f6;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, sans-serif;
 }
 
-.auth-container {
-    display: flex;
+/* ===== FULL BACKGROUND ===== */
+.login-hero {
     height: 100vh;
+    width: 100%;
+    background: 
+        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+        url("../images/farm.jpg") center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* LEFT SIDE */
-.auth-image {
-    width: 60%;
-    background: linear-gradient(
-        rgba(0,0,0,0.4),
-        rgba(0,0,0,0.4)
-    ), url("../images/farm.jpg") center/cover no-repeat;
+/* ===== CENTER CONTENT ===== */
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;   /* horizontal centering */
+    justify-content: center;
+    text-align: center;
     color: white;
-    padding: 80px;
 }
 
-.auth-image h1 {
-    font-size: 42px;
+
+/* TITLE */
+.hero-content h1 {
+    font-size: 48px;
+    font-weight: 700;
     margin-bottom: 10px;
 }
 
-.auth-image p {
+.hero-content p {
     font-size: 18px;
+    margin-bottom: 30px;
+    opacity: 0.9;
 }
 
-/* RIGHT SIDE */
-.auth-card {
-    width: 40%;
+/* ===== LOGIN CARD ===== */
+.login-card {
+    margin-top: 30px;
     background: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 60px;
+    padding: 30px 35px;
+    width: 360px;
+    border-radius: 16px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+    color: #333;
 }
 
-.auth-card h2 {
+/* LOGIN HEADING */
+.login-card h2 {
     margin-bottom: 20px;
     color: #2e7d32;
 }
 
-.auth-card input {
+/* INPUTS */
+.login-card input {
     width: 100%;
     padding: 12px;
     margin-bottom: 15px;
+    border-radius: 8px;
     border: 1px solid #ccc;
-    border-radius: 6px;
 }
 
-.auth-card button {
+/* BUTTON */
+.login-card button {
+    width: 100%;
     padding: 12px;
-    background: #2e7d32;
+    background: linear-gradient(90deg, #2e7d32, #43a047);
     color: white;
     border: none;
-    border-radius: 6px;
-    font-size: 16px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: bold;
     cursor: pointer;
 }
 
-.auth-card button:hover {
-    background: #1b5e20;
+.login-card button:hover {
+    background: linear-gradient(90deg, #1b5e20, #2e7d32);
 }
 
+/* SIGNUP LINK */
 .switch {
     margin-top: 15px;
+    font-size: 14px;
 }
 
 .switch a {
     color: #2e7d32;
-    text-decoration: none;
     font-weight: bold;
-}
-
-.auth-card {
-    border-radius: 18px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-}
-
-.auth-card h2 {
-    font-weight: 700;
-}
-
-.auth-card button {
-    transition: transform 0.15s ease;
-}
-
-.auth-card button:hover {
-    transform: scale(1.03);
+    text-decoration: none;
 }

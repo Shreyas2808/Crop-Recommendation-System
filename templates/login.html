@@ -7,29 +7,28 @@
 </head>
 <body>
 
-<div class="auth-container">
+<div class="login-hero">
 
-    <!-- LEFT IMAGE -->
-    <div class="auth-image">
-        <h1>🌾 Smart Crop<br>Recommendation System</h1>
+    <!-- OVERLAY CONTENT -->
+    <div class="hero-content">
+        <h1>🌾 Smart Crop Recommendation System</h1>
         <p>Grow smart. Earn more.</p>
-    </div>
 
-    <!-- RIGHT LOGIN CARD -->
-    <div class="auth-card">
-        <h2>Login</h2>
+        <!-- LOGIN CARD -->
+        <div class="login-card">
+            <h2>Login</h2>
 
-        <form method="POST">
-            <input type="email" name="email" placeholder="Email" required>
-            <input type="password" name="password" placeholder="Password" required>
+            <form method="POST">
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
 
-            <button type="submit">Login</button>
-        </form>
-
-        <p class="switch">
-            Don’t have an account?
-            <a href="{{ url_for('signup') }}">Sign up</a>
-        </p>
+            <p class="switch">
+                Don’t have an account?
+                <a href="{{ url_for('signup') }}">Sign up</a>
+            </p>
+        </div>
     </div>
 
 </div>
