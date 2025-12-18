@@ -116,15 +116,6 @@ http://127.0.0.1:5000
 
 ---
 
-## 🎓 Viva Highlights
-
-- Uses **ML pipeline** for prediction
-- Uses **market intelligence** for profit ranking
-- Clear separation of ML & data-driven logic
-- Scalable for real-world deployment
-
----
-
 ## 🔮 Future Enhancements
 
 - Weather API integration
