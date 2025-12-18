@@ -1,0 +1,98 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    background: #f4f7f6;
+}
+
+.auth-container {
+    display: flex;
+    height: 100vh;
+}
+
+/* LEFT SIDE */
+.auth-image {
+    width: 60%;
+    background: linear-gradient(
+        rgba(0,0,0,0.4),
+        rgba(0,0,0,0.4)
+    ), url("../images/farm.jpg") center/cover no-repeat;
+    color: white;
+    padding: 80px;
+}
+
+.auth-image h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+.auth-image p {
+    font-size: 18px;
+}
+
+/* RIGHT SIDE */
+.auth-card {
+    width: 40%;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px;
+}
+
+.auth-card h2 {
+    margin-bottom: 20px;
+    color: #2e7d32;
+}
+
+.auth-card input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.auth-card button {
+    padding: 12px;
+    background: #2e7d32;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.auth-card button:hover {
+    background: #1b5e20;
+}
+
+.switch {
+    margin-top: 15px;
+}
+
+.switch a {
+    color: #2e7d32;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.auth-card {
+    border-radius: 18px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.auth-card h2 {
+    font-weight: 700;
+}
+
+.auth-card button {
+    transition: transform 0.15s ease;
+}
+
+.auth-card button:hover {
+    transform: scale(1.03);
+}

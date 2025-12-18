@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Recommendations</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+    <h2>🌾 Smart Crop Recommendation System</h2>
+    <div class="user-info">
+        <span>{{ user.email }}</span>
+        <a href="{{ url_for('logout') }}">Logout</a>
+    </div>
+</div>
+
+<!-- TABS -->
+<div class="tabs">
+    <a href="{{ url_for('dashboard') }}">Similar Crops</a>
+    <a href="{{ url_for('fertilizer_page') }}">Fertilizer Used</a>
+    <a href="{{ url_for('ml_recommend') }}">ML Predict</a>
+</div>
+
+<!-- CONTENT -->
+<div class="content">
+
+    <div class="card">
+        <h3>{{ input_label }}</h3>
+        <p><strong>You entered:</strong> {{ input_value }}</p>
+    </div>
+
+    {% if suggestions and suggestions.suggestions %}
+    <div class="card" style="margin-top:30px;">
+        <h3>Recommended Crops</h3>
+
+        <ul>
+            {% for crop in suggestions.suggestions %}
+                <li>{{ crop }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% else %}
+    <div class="card" style="margin-top:30px;">
+        <p>No recommendations found.</p>
+    </div>
+    {% endif %}
+
+    {% if ranked_by_price %}
+    <div class="card" style="margin-top:30px; width:100%;">
+        <h3>Market Price Ranking ({{ city }})</h3>
+
+        <table>
+            <tr>
+                <th>Crop</th>
+                <th>Modal Price</th>
+                <th>Min Price</th>
+                <th>Max Price</th>
+            </tr>
+
+            {% for row in ranked_by_price %}
+            <tr>
+                <td>{{ row.matched_crop or row.requested_crop }}</td>
+                <td>{{ row.modal_price or "-" }}</td>
+                <td>{{ row.min_price or "-" }}</td>
+                <td>{{ row.max_price or "-" }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    {% endif %}
+
+</div>
+
+</body>
+</html>

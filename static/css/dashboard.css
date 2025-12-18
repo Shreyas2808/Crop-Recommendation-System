@@ -1,0 +1,160 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, sans-serif;
+    background: linear-gradient(to right, #e8f5e9, #f1f8e9);
+    color: #333;
+}
+
+/* ===== TOP BAR ===== */
+.top-bar {
+    background: linear-gradient(90deg, #2e7d32, #43a047);
+    color: white;
+    padding: 16px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-bar h2 {
+    margin: 0;
+    font-weight: 600;
+}
+
+.top-bar a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+.top-bar a:hover {
+    text-decoration: underline;
+}
+
+/* ===== TABS ===== */
+.tabs {
+    display: flex;
+    gap: 25px;
+    background: white;
+    padding: 14px 30px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.tabs a {
+    text-decoration: none;
+    color: #666;
+    font-weight: 600;
+    padding-bottom: 6px;
+}
+
+.tabs a.active {
+    color: #2e7d32;
+    border-bottom: 3px solid #2e7d32;
+}
+
+.tabs a:hover {
+    color: #1b5e20;
+}
+
+/* ===== CONTENT ===== */
+.content {
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 120px); /* minus header + tabs */
+}
+
+/* ===== CARD ===== */
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 14px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    width: 460px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+}
+
+.card h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #2e7d32;
+}
+
+/* ===== INPUTS ===== */
+input, select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #66bb6a;
+    box-shadow: 0 0 0 2px rgba(102,187,106,0.2);
+}
+
+/* ===== BUTTON ===== */
+button {
+    width: 100%;
+    padding: 13px;
+    background: linear-gradient(90deg, #2e7d32, #43a047);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.1s ease;
+}
+
+button:hover {
+    background: linear-gradient(90deg, #1b5e20, #2e7d32);
+    transform: scale(1.02);
+}
+
+/* ===== TABLE ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+table th {
+    background: #c8e6c9;
+    color: #1b5e20;
+    padding: 12px;
+    text-align: center;
+}
+
+table td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+}
+
+table tr:hover {
+    background: #f1f8e9;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+    .content {
+        padding: 20px;
+    }
+    .card {
+        width: 100%;
+    }
+}

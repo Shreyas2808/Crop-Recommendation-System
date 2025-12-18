@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard | Smart Crop Recommendation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+    <h2>🌾 Smart Crop Recommendation System</h2>
+    <div class="user-info">
+        <span>{{ user.email }}</span>
+        <a href="{{ url_for('logout') }}">Logout</a>
+    </div>
+</div>
+
+<!-- TABS -->
+<div class="tabs">
+    <a class="active" href="{{ url_for('dashboard') }}">Similar Crops</a>
+    <a href="{{ url_for('fertilizer_page') }}">Fertilizer Used</a>
+    <a href="{{ url_for('ml_recommend') }}">ML Predict</a>
+</div>
+
+<!-- CONTENT -->
+<div class="content">
+
+    <div class="card">
+        <h3>Similar Crop Recommendation</h3>
+        <form method="POST" action="{{ url_for('recommend_by_crop') }}">
+            <input type="text" name="crop" placeholder="Enter Crop" required>
+            <input type="text" name="fertilizer_for_crop" placeholder="Fertilizer (optional)">
+            <input type="text" name="city" placeholder="City for ranking (optional)">
+            <button type="submit">Get Results</button>
+        </form>
+    </div>
+
+</div>
+
+</body>
+</html>
