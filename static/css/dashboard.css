@@ -2,11 +2,14 @@
     box-sizing: border-box;
 }
 
-body {
-    margin: 0;
-    font-family: "Segoe UI", Tahoma, sans-serif;
-    background: linear-gradient(to right, #e8f5e9, #f1f8e9);
-    color: #333;
+.dashboard-page {
+    min-height: 100vh;
+    background:
+        linear-gradient(
+            rgba(255, 255, 255, 0.55),
+            rgba(255, 255, 255, 0.55)
+        ),
+        url("../images/dashboard.png") center/cover no-repeat fixed;
 }
 
 /* ===== TOP BAR ===== */
@@ -67,6 +70,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: calc(100vh - 120px); /* minus header + tabs */
+    background: transparent;
 }
 
 /* ===== CARD ===== */
